@@ -22,6 +22,8 @@ Task.prototype.save = function(){
     console.log('saving Task'+ this.name);
 };
 
+module.exports = Task;
+
 /*
 PRUEBA DE LA INFORMACION
 var task1 = new Task({name:'name1'});

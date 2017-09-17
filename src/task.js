@@ -36,5 +36,7 @@ Object.defineProperty(urgentTask,'toString',{
     configurable:false
 });
 
+module.exports = Task;
+
 //console.log(task.toString());
 //console.log(urgentTask.toString());
