@@ -21,9 +21,20 @@ Object.defineProperty(task,'toString',{
     value:function(){
         return this.title +' '+this.description;
     },
-    writable:true,
-    enumerable:true,
-    configurable:true
+    writable:false,
+    enumerable:false,
+    configurable:false
+});
+
+var urgentTask = Object.create(task);
+Object.defineProperty(urgentTask,'toString',{
+    value: function(){
+        return this.title + ' Urgente';
+    },
+    writable:false,
+    enumerable:false,
+    configurable:false
 });
 
 console.log(task.toString());
+console.log(urgentTask.toString());
