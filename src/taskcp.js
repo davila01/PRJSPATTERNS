@@ -2,15 +2,7 @@ var Task = function(arg){
 
     this.name= arg.name;
     this.completed= arg.completed;
-
-    /* SE REDEFINEN LOS METODOS PARA UTILIZAR HERENCIA
-    this.complete = function(){
-        console.log('completing task:'+this.name);
-        this.completed=true;
-    }
-    this.save = function(){
-        console.log('Saving task'+ this.name);
-    }*/ 
+    // SE REDEFINEN LOS METODOS PARA UTILIZAR HERENCIA
 }
 
 Task.prototype.complete = function(){
