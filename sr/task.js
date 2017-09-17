@@ -36,5 +36,5 @@ Object.defineProperty(urgentTask,'toString',{
     configurable:false
 });
 
-console.log(task.toString());
-console.log(urgentTask.toString());
+//console.log(task.toString());
+//console.log(urgentTask.toString());
