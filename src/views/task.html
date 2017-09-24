@@ -39,8 +39,8 @@
 
   <!-- endinject -->
 
-  <script src="/script.js"></script>
-
+  <script src="/constructor/script.js"></script>
+  <script src="/constructor/task.js"></script>
 
 </head>
 
@@ -49,41 +49,41 @@
   <!-- Main Nav -->
 
   <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" href="/">Inicio</a>
-    </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Inicio</a>
+        </li>
+    
+        <li class="nav-item">
+          <a class="nav-link" href="task.html">Task</a>
+        </li>
+    
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action 1</a>
+            <a class="dropdown-item" href="#">Action 2</a>
+            <a class="dropdown-item" href="#">Action 3</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+    
+      </ul>
 
-    <li class="nav-item">
-      <a class="nav-link" href="task.html">Task</a>
-    </li>
+  <!-- Main Nav -->
 
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action 1</a>
-        <a class="dropdown-item" href="#">Action 2</a>
-        <a class="dropdown-item" href="#">Action 3</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </li>
-
-  </ul>
-
-  <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-3">Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-      </div>
-    </div>
 
   <div class="container">
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-12">
 
-        <h2>INICIO</h2>
-        
+        <h2>Tareas</h2>
+        <div ng-controller='taskCtrl as ctrl'>
+          <div ng-repeat='task in ctrl.tasks'>
+            <input type='checkbox' ng-checked='task.completed' ng-click='task.complete'> {{task.name}}
+          </div>
+        </div>
 
       </div>
 

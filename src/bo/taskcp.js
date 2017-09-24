@@ -1,9 +1,11 @@
+
+
 var Task = function(arg){
 
     this.name= arg.name;
     this.completed= arg.completed;
     // SE REDEFINEN LOS METODOS PARA UTILIZAR HERENCIA
-}
+};
 
 Task.prototype.complete = function(){
     console.log('completing task'+this.name);
