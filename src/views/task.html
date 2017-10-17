@@ -81,11 +81,31 @@
         <h2>Tareas</h2>
         <div ng-controller='taskCtrl as ctrl'>
           <div ng-repeat='task in ctrl.tasks'>
-            <input type='checkbox' ng-checked='task.completed' ng-click='task.complete'> {{task.name}}
+            <input type='checkbox' ng-checked='task.completed' ng-click='task.complete()'> {{task.name}}
           </div>
         </div>
 
       </div>
+
+
+      <div class="col-md-12">
+        
+        <!-- <div ng-controller="taskCtrl as ctrl">
+           
+          <ul class="nav nav-tabs">
+          <div ng-repeat="task in ctrl.tasks">
+            <li class="nav-item">
+              <a ng-href='{{task.name}}'>{{task.name}}</a>
+
+            </li>
+          </div>
+        </ul>
+        
+        </div>     -->
+ 
+        
+      </div>
+
 
     </div>
 

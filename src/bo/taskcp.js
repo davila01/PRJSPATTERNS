@@ -1,5 +1,3 @@
-
-
 var Task = function(arg){
 
     this.name= arg.name;

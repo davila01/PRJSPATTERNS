@@ -7,10 +7,11 @@
         var Task = function (data) {
             this.name = data.name;
             this.completed = data.completed;
-        }
+        };
         Task.prototype.complete = function () {
             console.log('completing Task' + this.name);
             this.completed = true;
+          
         };
     
         Task.prototype.save = function () {

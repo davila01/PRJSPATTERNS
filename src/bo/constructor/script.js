@@ -13,6 +13,6 @@
                 ];
     };
   
-    app.controller('taskCtrl', taskController)
+    app.controller('taskCtrl', taskController);
 
 }());

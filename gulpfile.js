@@ -3,6 +3,7 @@ var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var nodemon = require('gulp-nodemon');
 var jsFiles = ['*.js', 'src/**/*.js'];
+require('dotenv').config();
 
 
 gulp.task('style', function () {
@@ -51,7 +52,7 @@ gulp.task('serve', ['style', 'inject'], function () {
         script: 'app.js',
         delayTime: 1,
         env: {
-            'PORT': 5000
+            'PORT': process.env.PORT||5000
         },
         watch: jsFiles
     };
