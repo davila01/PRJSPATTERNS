@@ -1,14 +1,19 @@
+
 (function () {
+    
+    var app = angular.module('coreManager');
+    
+        var menuController = function (Menu,$scope) {
+            var ctrl = this;
+            var menu = new Menu({});
+            // console.log(menu.getAll());
+            
+            var lsmenu = menu.getAll();
+            ctrl.menus = lsmenu.menus;
+        };
+        
+        app.controller('menuCtrl', menuController);
+    
+        
 
-    var app = angular.module('menuManager', []);
-
-    var menuController = function (MenuRepository, Menu) {
-        var ctrl = this;
-
-        var lsmenu = MenuRepository.getAll();
-        ctrl.menus = lsmenu.menus;
-        console.log(ctrl.menus);
-    }
-    app.controller('menuCtrl', menuController);
-
-}());
+    }());

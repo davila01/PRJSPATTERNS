@@ -1,6 +1,6 @@
 (function () {
 
-    var app = angular.module('menuManager');
+    var app = angular.module('coreManager');
 
     app.factory('Menu', function (MenuRepository) {
 
@@ -35,6 +35,13 @@
             if (this.id != null) {
                 MenuRepository.getById(this.id);
             }
+        };
+        Menu.prototype.getAll = function () {
+            if(MenuRepository!=null){
+                return MenuRepository.getAll();
+            }
+           
+              
         };
 
         return Menu;

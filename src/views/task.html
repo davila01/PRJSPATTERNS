@@ -6,17 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
-         -->
-  <!-- <link rel="stylesheet" href="style.css" /> -->
-  <!-- <script src="script.js"></script> -->
-  <!-- <script src="/src/taskcp.js"></script> -->
-
-
-
   <!-- bower -->
   <script src="/lib/jquery/dist/jquery.js"></script>
-  <script src="/lib/tether/dist/js/tether.js"></script>
   <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
   <script src="/lib/angular/angular.js"></script>
   <script src="/lib/bootstrap-css/js/bootstrap.min.js"></script>
@@ -24,6 +15,7 @@
 
   <!-- bower:css -->
   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-theme.css" />
   <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" />
   <link rel="stylesheet" href="/lib/bootstrap-css/css/bootstrap.min.css" />
   <!-- endbower -->
@@ -39,37 +31,29 @@
 
   <!-- endinject -->
 
-  <script src="/constructor/script.js"></script>
-  <script src="/constructor/task.js"></script>
+  <script src="/coreController.js"></script>
+  <script src="/aglrmenu/menuRepository.js"></script>
+  <script src="/aglrmenu/menu.js"></script>
+  <script src="/aglrmenu/menuController.js"></script>
+
+  <script src="/aglrtask/task.js"></script>
+  <script src="/aglrtask/taskController.js"></script>
+  
 
 </head>
 
-<body ng-app='taskManager'>
+<body ng-app='coreManager'>
+
 
   <!-- Main Nav -->
+  <div>
+    <ul class="nav nav-tabs" ng-controller="menuCtrl as ctrl">
+      <li ng-repeat="menu in ctrl.menus" class="nav-item">
+        <a ng-href='{{menu.dirlink}}'>{{menu.name}}</a>
+      </li>
 
-  <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Inicio</a>
-        </li>
-    
-        <li class="nav-item">
-          <a class="nav-link" href="task.html">Task</a>
-        </li>
-    
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
-            <a class="dropdown-item" href="#">Action 3</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-    
-      </ul>
-
+    </ul>
+  </div>
   <!-- Main Nav -->
 
 
@@ -79,31 +63,18 @@
       <div class="col-md-12">
 
         <h2>Tareas</h2>
-        <div ng-controller='taskCtrl as ctrl'>
-          <div ng-repeat='task in ctrl.tasks'>
-            <input type='checkbox' ng-checked='task.completed' ng-click='task.complete()'> {{task.name}}
+
+        <div>
+          <div ng-controller='taskCtrl as ctrl'>
+            <div ng-repeat='task in ctrl.tasks'>
+              <input type='checkbox' ng-checked='task.completed' ng-click='task.complete()'> {{task.name}}
+              
+            </div>
+            
+            <h3>{{message}}</h3>
+           
           </div>
         </div>
-
-      </div>
-
-
-      <div class="col-md-12">
-        
-        <!-- <div ng-controller="taskCtrl as ctrl">
-           
-          <ul class="nav nav-tabs">
-          <div ng-repeat="task in ctrl.tasks">
-            <li class="nav-item">
-              <a ng-href='{{task.name}}'>{{task.name}}</a>
-
-            </li>
-          </div>
-        </ul>
-        
-        </div>     -->
- 
-        
       </div>
 
 
@@ -116,7 +87,7 @@
     </footer>
   </div>
 
- 
+
 
 
 </body>

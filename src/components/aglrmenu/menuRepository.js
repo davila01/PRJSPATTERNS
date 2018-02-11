@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module('menuManager');
+    var app = angular.module('coreManager');
 
     var menuRepo = function ($http) {
         
@@ -36,8 +36,11 @@
         
                 return {
                     menus: [
-                        { id:1,name: 'Menu 1', activated: true,dirlink:'/Menu1',tooltip:'Menu 1',descripcion:'Menu 1',no:1,father:null },
-                        { id:1,name: 'Menu 2', activated: true,dirlink:'/Menu1',tooltip:'Menu 1',descripcion:'Menu 1',no:1,father:null }
+                        { id:1,name: 'Index', activated: true,dirlink:'/index.html',tooltip:'Index',descripcion:'Inicio menu',no:1,father:null },
+                        { id:2,name: 'Inicio', activated: true,dirlink:'/inicio.html',tooltip:'Inicio',descripcion:'Inicio',no:2,father:null },
+                        { id:3,name: 'Persona', activated: true,dirlink:'/persona.html',tooltip:'persona',descripcion:'Persona',no:3,father:null },
+                        { id:4,name: 'Task', activated: true,dirlink:'/task.html',tooltip:'Task',descripcion:'Task',no:4,father:null },
+                        { id:4,name: 'Nosotros', activated: true,dirlink:'/about.html',tooltip:'Nosotros',descripcion:'Nosotros',no:5,father:null }
                     ]
                 };
             };

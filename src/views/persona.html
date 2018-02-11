@@ -6,6 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+         -->
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <!-- <script src="script.js"></script> -->
+  <!-- <script src="/src/taskcp.js"></script> -->
+
+
+
   <!-- bower -->
   <script src="/lib/jquery/dist/jquery.js"></script>
   <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -35,14 +43,17 @@
   <script src="/aglrmenu/menuRepository.js"></script>
   <script src="/aglrmenu/menu.js"></script>
   <script src="/aglrmenu/menuController.js"></script>
-
+  
+  <script src="/aglrpersona/personaRepository.js"></script>
+  <script src="/aglrpersona/persona.js"></script>
+  <script src="/aglrpersona/personaController.js"></script>
 
 </head>
 
-<body>
+<body ng-app='coreManager'>
 
   <!-- Main Nav -->
-  <div ng-app='coreManager'>
+  <div>
   <ul class="nav nav-tabs" ng-controller="menuCtrl as ctrl">
        <li ng-repeat="menu in ctrl.menus" class="nav-item">
            <a ng-href='{{menu.dirlink}}'>{{menu.name}}</a>
@@ -50,27 +61,24 @@
      
    </ul>
   </div>
-  
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-3">Fluid jumbotron</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-  </div>
-
+    <!-- Main Nav -->
 
   <div class="container">
-    <!-- Example row of columns -->
-
-
-    <hr>
-
-    <footer>
-      <p>&copy; FOOTER</p>
-    </footer>
-  </div>
-
+    <h3>Persona</h3>
+      <!-- Example row of columns -->
+      <div>
+          <div class="nav nav-tabs" ng-controller="personaCtrl as ctrlp">
+                <div ng-repeat="persona in ctrlp.personas" class="nav-item">
+                 <p>  {{persona.nombre}} &nbsp; {{persona.apellido_uno}} &nbsp; {{persona.apellido_dos}}</p> 
+                </div>
+             
+              </div>
+          </div>
+  
+        <footer>
+        <p>&copy; FOOTER</p>
+      </footer>
+    </div>
    <!-- Main Nav -->
 
 

@@ -23,6 +23,7 @@ Menu.prototype.delete = function () {
     console.log('deleting menu:' + this.name);
     Repo.delete(this);
 };
+
 Menu.prototype.update = function () {
     console.log('updating menu:' + this.name);
     Repo.update(this);

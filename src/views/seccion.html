@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="en" ng-app="app">
+
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- bower -->
+        <script src="/lib/jquery/dist/jquery.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/lib/angular/angular.js"></script>
+        <script src="/lib/bootstrap-css/js/bootstrap.min.js"></script>
+        <!-- endbower -->
+
+        <!-- bower:css -->
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="/lib/bootstrap-css/css/bootstrap.min.css" />
+        <!-- endbower -->
+
+     
+       
+    </head>
+
+    <body>
+
+        
+        <h1 ng-controller="seccionCtrl">
+            {{mensaje}}
+        </h1>
+
+        <script type="text/javascript">
+        angular.module('app',[]).controller('seccionCtrl', 
+        function($scope){
+            $scope.mensaje = "hola mundo";
+
+        });
+
+        </script>
+
+    </body>
+
+    </html>
