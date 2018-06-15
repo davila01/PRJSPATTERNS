@@ -42,13 +42,13 @@
         };
         Persona.prototype.getById = function () {
             if (this.id != null) {
-                PersonaRepository.getById(this.id);
+               return PersonaRepository.getById(this);
             }
         };
 
         Persona.prototype.getAll = function () {
             if(PersonaRepository!=null){ 
-                return PersonaRepository.getAll();
+                return PersonaRepository.getAll(this);
             }
               
         };
